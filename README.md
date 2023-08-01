@@ -22,7 +22,7 @@
             <div class="container font-montserrat">
                 <div class="list">
                     <a class="list-block" href="https://itspatkar.github.io/Cheatsheets/bootstrap">Bootstrap</a>
-                    <a class="list-block" href="https://itspatkar.github.io/Cheatsheets/cpp">C++</a>
+                    <a class="list-block" href="https://nightwing.github.io/Cheatsheets/cpp">C++</a>
                     <a class="list-block" href="https://itspatkar.github.io/Cheatsheets/css">CSS</a>
                     <a class="list-block" href="https://itspatkar.github.io/Cheatsheets/git">Git</a>
                     <a class="list-block" href="https://itspatkar.github.io/Cheatsheets/html">HTML</a>
