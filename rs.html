@@ -68,7 +68,7 @@ fn main(){
     <p>if compiler cannot figure out use <code>-></code></p>
     <pre class="code-box code-box-color"><code>
 let guess: u32 = 2    (declare with type)</code>
-::<type>              (or use turbofish)
+::<type of variable>              (or use turbofish)
 let four ="4".parse::<u32>().unwrap()
     </code></pre>
     <p> variables are immutable by default</p>
@@ -82,8 +82,62 @@ let mut bar = 5 </code>
 let x = "12"
 let x: usize = x.parse().unwrap </code>
     </pre>
+    <p>or remove the need for mut </p>
+    <pre class="code-box code-box-color">
+        <code>
+let x = 5 
+let x = x+1</code>
+    </pre>
                     
                 </code></div>
+            
+            <div class="sections" id="#ownership">
+                <h3 class="heading"># Ownership </h3>
+                <p>memory is managed by system of Ownership with set of rules that compiler checks at compile time</p> 
+                <h4 class="heading">Ownership Rules</h4>
+                <p>1. Each values in Rust has a variable that's called its owner.</p>
+                <p>2. There can only be one owner at a time.</p>
+                <p>3. When the owner goes out of scope, the value will be dropped.</p>
+                <h4>Scope of a variable</h4>
+                <p> within the block it is declared in, which is denoted by brackets when an owning variable goes out of scoped, it is dropped</p>
+                <pre class="code-box code-box-color">
+                    <code>
+fn main()
+{
+    let x: i32 = 17;
+    {
+        let y: i32 = 3; 
+        println!("x is {} and y is {}",x, y);
+    }
+    println!("x is {} and y is {}",x, y); // this wont work
+}</code>
+                </pre>
+                 <h4>Shadowing in scope</h4>
+                 <p>shadowing a name does not alter or destroy the value it was bound to </p>
+                 <pre class="code-box code-box-color">
+                    <code>
+fn main(){
+    let x: i32 = 8; 
+    {
+        println!("{}", x); //prints "8"
+        let x = 12; 
+        println!("{}",x);  // prints "12"
+    }
+    println!("{}",x); //prints 8
+}</code>
+                 </pre>
+                 <h3>Constants</h3>
+                 <p>type of the value must always be annotated + always immutable + constants can be declared in any sccope, including the global scope</p>
+                 <pre class="code-box code-box-color"><code>
+const Threshold: i32 = 10; 
+__________________________
+const T: usize = 20;
+fn main()
+{
+    println!("{}", T);
+}</code></pre>
+
+            </div>    
             </div>
         </div>
     </body>
